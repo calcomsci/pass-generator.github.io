@@ -15,6 +15,6 @@ The password is made up of one or more of the following characters:
 
 When you click the Generate Password button:
 1) You are asked to put a positive number between 10 to 64 characters
-2) You are asked  if you would like to use uppercase, lowercase, numbers, and/or symbols for the password
+2) You are asked  if you would like to use uppercase letters, lowercase letters, numbers, and/or symbols for the password
 
 Once you have your password, make sure to click Start Over if you would like to try a different password
