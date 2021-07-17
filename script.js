@@ -27,7 +27,7 @@ var specialChar = ['@','%',  '+',
 function passwordchoices() 
 {
   var UserAnswers = {length:length, gotLower:gotLower, gotSpecial:gotSpecial, gotNumber:gotNumber};
-  var length = parseInt (prompt("Password must be between 10 to 64 characters long, how long would you like yours?"));
+  var length = parseInt (prompt("Select a number between 10 to 64 characters long for your password"));
 
   if (isNaN(length)===true)
   {
@@ -132,7 +132,7 @@ function generatePassword()
 }
 
 
-var generateBtn = document.querySelector("#generate");
+
 var generateBtn = document.querySelector("#generate");
 function writePassword() {
 var password = generatePassword();
