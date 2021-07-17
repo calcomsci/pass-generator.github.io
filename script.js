@@ -27,6 +27,10 @@ var specialChar = ['@','%',  '+',
 function passwordchoices() 
 {
   var length = parseInt (prompt("Type a number between 10 to 64 characters long for your password:"));
+  var gotLower = confirm("Press OK to use lowercase letters in your password");
+  var gotUpper = confirm("Press OK to use uppercase letters in your password");
+  var gotSpecial = confirm("Press OK to use symbols in your password");
+  var gotNumber = confirm("Press OK to use numbers in your password");
 
   if (isNaN(length)===true)
   {
@@ -44,29 +48,10 @@ function passwordchoices()
       return;
   }
 
-  gotLower = confirm("Press OK to use lowercase letters in your password")
-  gotUpper = confirm("Press OK to use uppercase letters in your password")
-  gotSpecial = confirm("Press OK to use symbols in your password")
-  gotNumber = confirm("Press OK to use numbers in your password")
 
 
-
-
-  if (
-      gotLower === false&&
-      gotUpper === false&&
-      gotSpecial === false&&
-      gotNumber ===false
-
-  )
-
-  {
-      alert ("Please click OK to at least one type of character (uppercase/lowercase/symbols/numbers) to continue")
-  return;
-
-  }
   var UserAnswers = {length:length, gotLower:gotLower, gotUpper:gotUpper, gotSpecial:gotSpecial, gotNumber:gotNumber};
-  
+
 
   return UserAnswersCopy
 
@@ -160,6 +145,13 @@ let useSpecialCharacters = confirm("Press OK to use symbols");
 if (useSpecialCharacters === true) {
   masterArray = [...masterArray, ...specialCharacters];
 }
+
+while (useLowerCase == false && useUpperCase == false && useNumbers == false && useSpecialCharacters == false)
+{
+  alert ("Please click OK to at least one type of character (uppercase/lowercase/symbols/numbers) to generate a proper password")
+  let randomPassword = " ";
+  return randomPassword;
+} 
 let randomPassword = " ";
 for (let i = 0; i < passwordLength; i++) {
 randomPassword += masterArray[Math.floor(Math.random() * (masterArray.length))];
