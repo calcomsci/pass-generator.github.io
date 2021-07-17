@@ -28,7 +28,7 @@ function passwordchoices()
 {
   var UserAnswers = {};
   var UserAnswersCopy = UserAnswers;
-  
+
   var length = parseInt (prompt("Select a number between 10 to 64 characters long for your password"));
 
   if (isNaN(length)===true)
@@ -142,7 +142,7 @@ let masterArray = "";
 let randomPassword = "";
 generateBtn.addEventListener("click", writePassword);
 function generatePassword() {
-let passwordLength = prompt("Select a password between 10 to 64 characters");
+let passwordLength = prompt("Select a number between 10 to 64 characters long for your password");
 if (!passwordLength || passwordLength < 10 || passwordLength > 64) {
 return alert("Please select a password with more than 10 or less than 64 characters");
 }
