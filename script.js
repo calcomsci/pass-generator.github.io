@@ -26,7 +26,9 @@ var specialChar = ['@','%',  '+',
 
 function passwordchoices() 
 {
-  var UserAnswers = {length:length, gotLower:gotLower, gotSpecial:gotSpecial, gotNumber:gotNumber};
+  var UserAnswers = {};
+  var UserAnswersCopy = UserAnswers;
+  
   var length = parseInt (prompt("Select a number between 10 to 64 characters long for your password"));
 
   if (isNaN(length)===true)
@@ -45,15 +47,10 @@ function passwordchoices()
       return;
   }
 
-  var gotLower = false;
-  var gotUpper = false;
-  var gotSpecial = false;
-  var gotNumber = false;
-
-  var gotLower = confirm("Press OK to use lowercase letters in your password")
-  var gotUpper = confirm("Press OK to use uppercase letters in your password")
-  var gotSpecial = confirm("Press OK to use symbols in your password")
-  var gotNumber = confirm("Press OK to use numbers in your password")
+  gotLower = confirm("Press OK to use lowercase letters in your password")
+  gotUpper = confirm("Press OK to use uppercase letters in your password")
+  gotSpecial = confirm("Press OK to use symbols in your password")
+  gotNumber = confirm("Press OK to use numbers in your password")
 
 
 
@@ -71,8 +68,12 @@ function passwordchoices()
   return;
 
   }
-  var UserAnswers = {length:length, gotLower:gotLower, gotSpecial:gotSpecial, gotNumber:gotNumber};
-  return UserAnswers
+  UserAnswers = {length:length, gotLower:gotLower, gotUpper:gotUpper, gotSpecial:gotSpecial, gotNumber:gotNumber};
+  
+
+  return UserAnswersCopy
+
+
 }
 
 
@@ -100,21 +101,16 @@ function generatePassword()
       myCharacter2.push(random(lowercase));
   }
   if (pwChoices.gotUpper){
-  myCharacter1 = myCharacter1.concat(uppercase);
-  myCharacter2.push(random(uppercase))
+    myCharacter1 = myCharacter1.concat(uppercase);
+    myCharacter2.push(random(uppercase))
   }
   if (pwChoices.gotSpecial){
     myCharacter1 = myCharacter1.concat(specialChar);
     myCharacter2.push(random(specialChar))
   }
   if (pwChoices.gotNumber){
-  myCharacter1 = myCharacter1.concat(numeric);
-  myCharacter2.push(random(numeric))
-  }
-
-  if (pwChoices.gotLower){
-      myCharacter1 = myCharacter1.concat(lowercase);
-      myCharacter2.push(random(lowercase))
+    myCharacter1 = myCharacter1.concat(numeric);
+    myCharacter2.push(random(numeric))
   }
 
   for (var i = 0; i - pwChoices.length; i++) {
@@ -124,8 +120,6 @@ function generatePassword()
     for (var i = 0; i - myCharacter2.length; i++) {
       result[i]=myCharacter2
       }
-  
-  pwChoices={length:0, gotLower:false, gotUpper:false, gotSpecial:false, gotNumber:false};
   return result.join("")
 
 
@@ -150,7 +144,7 @@ generateBtn.addEventListener("click", writePassword);
 function generatePassword() {
 let passwordLength = prompt("Select a password between 10 to 64 characters");
 if (!passwordLength || passwordLength < 10 || passwordLength > 64) {
-return alert("Please select a password with more than 10 or greater than 64 characters");
+return alert("Please select a password with more than 10 or less than 64 characters");
 }
 
 let useLowerCase = confirm("Press OK to use lowercase letters");
@@ -175,6 +169,7 @@ randomPassword += masterArray[Math.floor(Math.random() * (masterArray.length))];
 console.log(Math.floor(Math.random() * (masterArray.length)));
 console.log(randomPassword);
 }
+
 return randomPassword;
 
 }
@@ -190,4 +185,5 @@ function writePassword() {
 
 // Add event listener to generate button
 
-generateBtn.addEventListener ("click", writePassword)
+generateBtn.addEventListener ("click", writePassword);
+//

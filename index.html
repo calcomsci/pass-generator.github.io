@@ -14,19 +14,27 @@
       </header>
       <div class="card">
         <div class="card-header">
-          <h2>Generate a Password</h2>
-          <h2>Please Refresh The Page When A Password Generates Successfully</h2>
+          <h2>Click Generate Password below to begin</h2>
         </div>
         <div class="card-body">
           <textarea
             readonly
             id="password"
-            placeholder="Your Password!"
+            placeholder="Your Password"
             aria-label="Generated Password"
           ></textarea>
         </div>
         <div class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
+          <p> Refresh Page to create a new password</p>
+          <button onClick="window.location.href=window.location.href" id="generate" class="btn">Refresh Page</button>
+          <script>
+           document.getElementById("generate").addEventListener("click", function(){ 
+
+              // Preventbutton from clicking
+              document.getElementById("generate").disabled = true;
+           });
+          </script>
         </div>
       </div>
     </div>
