@@ -1,5 +1,8 @@
 # pass generator.github.io
  password generator
+ 
+ You may visit the Github Live Page here:
+ https://calcomsci.github.io/pass-generator.github.io/
 
 This is a password generator made in HTML, Javascript, and CSS.
 The generator will create a password that is between 10 to 64 characters long.
