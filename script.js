@@ -26,10 +26,7 @@ var specialChar = ['@','%',  '+',
 
 function passwordchoices() 
 {
-  var UserAnswers = {};
-  var UserAnswersCopy = UserAnswers;
-
-  var length = parseInt (prompt("Select a number between 10 to 64 characters long for your password:"));
+  var length = parseInt (prompt("Type a number between 10 to 64 characters long for your password:"));
 
   if (isNaN(length)===true)
   {
@@ -68,7 +65,7 @@ function passwordchoices()
   return;
 
   }
-  UserAnswers = {length:length, gotLower:gotLower, gotUpper:gotUpper, gotSpecial:gotSpecial, gotNumber:gotNumber};
+  var UserAnswers = {length:length, gotLower:gotLower, gotUpper:gotUpper, gotSpecial:gotSpecial, gotNumber:gotNumber};
   
 
   return UserAnswersCopy
