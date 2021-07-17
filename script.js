@@ -29,7 +29,7 @@ function passwordchoices()
   var UserAnswers = {};
   var UserAnswersCopy = UserAnswers;
 
-  var length = parseInt (prompt("Select a number between 10 to 64 characters long for your password"));
+  var length = parseInt (prompt("Select a number between 10 to 64 characters long for your password:"));
 
   if (isNaN(length)===true)
   {
